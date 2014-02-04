@@ -121,6 +121,22 @@ void ObjectFile::Link()
 			if (sym->flags == 0)
 			{
 				asection* section = bfd_get_section (sym);
+
+				if (bfd_is_und_section (section))
+				{
+				  AddImportSymbol(symname);
+				}
+				else
+				{
+				    AddExportSymbol(symname);
+				} 
+			}
+
+			if (sym->flags & BSF_GLOBAL)
+			{
+			    asection* section = bfd_get_section (sym);
+
+
 				if (bfd_is_und_section (section))
 				{
 					AddImportSymbol(symname);

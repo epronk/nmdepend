@@ -24,7 +24,7 @@
 #include "Callback.h"
 #include "ObjectPackage.h"
 #include "ObjectFile.h"
-#include "Bfd.h"
+#include "nmdepend.h"
 #include "Factory.h"
 
 namespace fs = boost::filesystem;
